@@ -1,6 +1,6 @@
 package modelexceptions;
 
-public class domainException extends Exception{
+public class domainException extends RuntimeException{
     /**
      * 
      */

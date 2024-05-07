@@ -17,7 +17,7 @@ public class reservation {
 
     
 
-    public reservation(Integer roomNumber, Date checkIn, Date checkOut) throws domainException {
+    public reservation(Integer roomNumber, Date checkIn, Date checkOut)  {
         if(! checkOut.after(checkIn)){
             throw new domainException( "Check-out date must be after check-in date");
         }
@@ -50,7 +50,7 @@ public class reservation {
        return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
     }
     
-    public void updateDates(Date checkIn, Date checkOut)throws domainException{
+    public void updateDates(Date checkIn, Date checkOut){
         Date now =new Date();
         if(checkIn.before(now)|| checkOut.before(now)){
            throw new domainException( "Reservation dates for update must be future dates");
